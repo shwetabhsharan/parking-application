@@ -15,6 +15,7 @@ class Space(models.Model):
     radius = models.IntegerField(default=1)
     is_available = models.BooleanField(default=True)
     booked_for = models.IntegerField(default=0)
+    booked_at = models.DateTimeField(blank=True, null=True)
 
     def save(self, *args, **kwargs):
         if self.booked_for > 60 or self.booked_for < 0:
